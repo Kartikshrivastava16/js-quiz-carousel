@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step 3 – API Fetch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-home">🏠 Home</a>
+  <div class="nav-center">
+    <h1>Step 3 · API Fetch</h1>
+    <span class="nav-tag">fetch() · JSON</span>
+  </div>
+  <div class="nav-right">
+    <a href="../quiz-carousel/index.html" class="nav-next" title="Go to Step 2">Step 2 ←</a>
+  </div>
+</nav>
+<header>
+  <div class="step">STEP 03 — EXTERNAL APIs</div>
+  <h2>Fetch Data from<br><span>Public APIs</span></h2>
+  <p>Retrieve real-time data from public APIs and render it dynamically on the page using JavaScript's fetch().</p>
+</header>
+<div class="grid">
+  <div class="api-card">
+    <div class="api-card-header"><div class="api-icon">🌤</div><div><h3>Weather API</h3><div class="api-tag">api.open-meteo.com + geocoding</div></div></div>
+    <div class="api-card-body">
+      <div class="weather-form">
+        <input class="weather-input" id="city-input" type="text" placeholder="Enter city (e.g. Mumbai)"/>
+        <button class="fetch-btn" id="weather-btn" onclick="fetchWeather()">Fetch ⚡</button>
+      </div>
+      <div class="weather-result" id="weather-result"><span class="weather-empty">Enter a city name above to fetch live weather.</span></div>
+      <div class="code-peek">// Fetch weather data
+const geo = await fetch(
+  `https://geocoding-api.open-meteo.com/v1/search?name=${city}`
+);
+const weather = await fetch(
+  `https://api.open-meteo.com/v1/forecast?...`
+);</div>
+    </div>
+  </div>
+  <div class="api-card">
+    <div class="api-card-header"><div class="api-icon">😂</div><div><h3>Joke API</h3><div class="api-tag">v2.jokeapi.dev</div></div></div>
+    <div class="api-card-body">
+      <div class="joke-result" id="joke-result"><div class="joke-empty">Click below to fetch a random joke!</div></div>
+      <button class="fetch-btn full-width" onclick="fetchJoke()" id="joke-btn">Get a Joke 😄</button>
+      <div class="code-peek">// Fetch a random joke
+const res = await fetch(
+  'https://v2.jokeapi.dev/joke/Any'
+);
+const data = await res.json();
+if(data.type === 'twopart') {
+  show(data.setup, data.delivery);
+} else { show(data.joke); }</div>
+    </div>
+  </div>
+  <div class="api-card span-all">
+    <div class="api-card-header"><div class="api-icon">💡</div><div><h3>Advice Slip API</h3><div class="api-tag">api.adviceslip.com</div></div></div>
+    <div class="api-card-body">
+      <div class="advice-result" id="advice-result"><div class="joke-empty">Click below for a piece of advice!</div></div>
+      <button class="fetch-btn full-width" onclick="fetchAdvice()" id="advice-btn">Get Advice 💡</button>
+      <div class="code-peek">// Advice Slip API
+const res = await fetch(
+  'https://api.adviceslip.com/advice'
+);
+const { slip } = await res.json();
+display(slip.advice);</div>
+    </div>
+  </div>
+</div>
+<footer>Step 3 — API Fetch</footer>
+<script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step 2 – Quiz & Carousel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-home">🏠 Home</a>
+  <div class="nav-center">
+    <h1>Step 2 · Quiz & Carousel</h1>
+    <span class="nav-tag">JavaScript</span>
+  </div>
+  <div class="nav-right">
+    <a href="../api-fetch/index.html" class="nav-next" title="Go to Step 3">Step 3 →</a>
+  </div>
+</nav>
+<header>
+  <div class="step">STEP 02 — INTERACTIVE JS</div>
+  <h2>Interactive <span>Quiz</span> &amp;<br><span>Image Carousel</span></h2>
+  <p>Complex JavaScript projects: an interactive quiz and a smooth image carousel built from scratch.</p>
+</header>
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('quiz',this)">🧠 Interactive Quiz</button>
+  <button class="tab-btn" onclick="switchTab('carousel',this)">🖼 Image Carousel</button>
+</div>
+  <div class="panel active" id="tab-quiz">
+  <div class="quiz-wrap">
+    <div id="quiz-content">
+      <div class="quiz-header">
+        <div class="quiz-meta">
+          <span class="q-counter" id="q-counter">Question 1 of 5</span>
+          <span class="q-counter" id="score-display">Score: 0 / 5</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+      <div class="question-container">
+        <div class="question" id="question-text"></div>
+        <div class="options" id="options-container"></div>
+        <div class="quiz-feedback" id="quiz-feedback"></div>
+      </div>
+      <div class="quiz-actions">
+        <button class="next-btn is-hidden" id="next-btn" onclick="nextQuestion()">Next Question →</button>
+        <button class="submit-btn is-hidden" id="submit-btn" onclick="submitQuiz()">📊 Submit Quiz</button>
+      </div>
+    </div>
+    <div class="score-screen is-hidden" id="score-screen">
+      <div class="result-emoji" id="result-emoji"></div>
+      <h3 id="final-score"></h3>
+      <p id="final-msg"></p>
+      <div class="score-details" id="score-details"></div>
+      <button class="restart-btn" onclick="restartQuiz()">🔄 Try Again</button>
+    </div>
+  </div>
+</div>
+<div class="panel" id="tab-carousel">
+  <div class="carousel-outer">
+    <div class="carousel-track" id="carousel-track">
+      <div class="carousel-slide"><div class="slide-num">01 / 05</div><div class="slide-icon">🌿</div><div class="slide-title">Into the Forest</div><div class="slide-sub">A journey through ancient trees</div></div>
+      <div class="carousel-slide"><div class="slide-num">02 / 05</div><div class="slide-icon">🔮</div><div class="slide-title">Crystal Dreams</div><div class="slide-sub">Where imagination meets reality</div></div>
+      <div class="carousel-slide"><div class="slide-num">03 / 05</div><div class="slide-icon">🌅</div><div class="slide-title">Golden Hour</div><div class="slide-sub">When sky meets the earth</div></div>
+      <div class="carousel-slide"><div class="slide-num">04 / 05</div><div class="slide-icon">🌊</div><div class="slide-title">Deep Ocean</div><div class="slide-sub">Mysteries beneath the waves</div></div>
+      <div class="carousel-slide"><div class="slide-num">05 / 05</div><div class="slide-icon">🌋</div><div class="slide-title">Volcanic Rise</div><div class="slide-sub">Earth's raw power unleashed</div></div>
+    </div>
+    <button class="carousel-btn prev" onclick="moveSlide(-1)">‹</button>
+    <button class="carousel-btn next" onclick="moveSlide(1)">›</button>
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </div>
+</div>
+<footer>Step 2 — Quiz & Carousel</footer>
+<script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Step 1 – Responsive Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Syne:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-home">🏠 Home</a>
+  <div class="nav-center">
+    <h1>Step 1 · Responsive Design</h1>
+    <span class="nav-tag">Media Queries</span>
+  </div>
+  <div class="nav-right">
+    <a href="../quiz-carousel/index.html" class="nav-next" title="Go to Step 2">Step 2 →</a>
+  </div>
+</nav>
+<header>
+  <div class="step">STEP 01 — RESPONSIVE DESIGN</div>
+  <h2>Apply Responsive Design<br>Using Media Queries</h2>
+  <p>Web pages adapt fluidly to mobile, tablet, and desktop screens using CSS media queries.</p>
+</header>
+<div class="demo-label">▼ LIVE DEMO — RESIZE YOUR BROWSER WINDOW ▼</div>
+<div class="vp-bar">
+  <p>Current Viewport:</p>
+  <div class="vp-chips">
+    <div class="vp-chip" id="chip-mobile">📱 Mobile (&lt;600px)</div>
+    <div class="vp-chip" id="chip-tablet">📟 Tablet (600–899px)</div>
+    <div class="vp-chip" id="chip-desktop">🖥 Desktop (900px+)</div>
+  </div>
+</div>
+<div class="grid-demo">
+  <div class="grid-card"><div class="grid-card-img">🌿</div><div class="grid-card-body"><h3>Nature</h3><p>Responsive images and flexible text adjust for every screen size.</p></div></div>
+  <div class="grid-card"><div class="grid-card-img">🔮</div><div class="grid-card-body"><h3>Magic</h3><p>Grid layouts reflow from 1 to 2 to 3 columns as the viewport grows.</p></div></div>
+  <div class="grid-card"><div class="grid-card-img">🌅</div><div class="grid-card-body"><h3>Horizon</h3><p>Font sizes scale with clamp() for perfect readability everywhere.</p></div></div>
+  <div class="grid-card"><div class="grid-card-img">🌊</div><div class="grid-card-body"><h3>Ocean</h3><p>Padding and gap values adapt so content never feels cramped on mobile.</p></div></div>
+  <div class="grid-card"><div class="grid-card-img">🌸</div><div class="grid-card-body"><h3>Blossom</h3><p>Navigation collapses to a hamburger on small screens automatically.</p></div></div>
+  <div class="grid-card"><div class="grid-card-img">🌲</div><div class="grid-card-body"><h3>Forest</h3><p>Touch targets are at least 44px tall on mobile for easy interaction.</p></div></div>
+</div>
+<div class="nav-demo">
+  <h3>▼ DEMO — RESPONSIVE NAVIGATION</h3>
+  <div class="fake-nav">
+    <div class="fake-nav-desktop">
+      <div class="logo">MyBrand</div>
+      <ul><li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Work</a></li><li><a href="#">Contact</a></li></ul>
+      <a href="#" class="cta">Get Started</a>
+    </div>
+    <div class="device-label">On mobile: only logo is shown. On tablet/desktop: full nav appears.</div>
+  </div>
+</div>
+<footer>Step 1 — Responsive Design</footer>
+<script src="script.js" defer></script>
+</body>
+</html>
